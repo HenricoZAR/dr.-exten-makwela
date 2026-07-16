@@ -134,16 +134,18 @@ export function Header() {
             );
           })}
         </nav>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4 justify-self-end">
           <button
             aria-label="Search"
             className="hidden sm:grid h-10 w-10 place-items-center rounded-full text-secondary hover:bg-alternate"
           >
             <Search className="h-5 w-5" />
           </button>
-          <PillButton variant="dark" as="a" href="/#contact">
-            Get Started
-          </PillButton>
+          <div className="hidden sm:block">
+            <PillButton variant="dark" as="a" href="/#contact">
+              Get Started
+            </PillButton>
+          </div>
           <button
             className="lg:hidden grid h-10 w-10 place-items-center rounded-full text-secondary"
             onClick={() => setOpen(!open)}
@@ -182,6 +184,14 @@ export function Header() {
                 </Link>
               )
             )}
+            <a
+              href="/#contact"
+              onClick={() => setOpen(false)}
+              className="sm:hidden mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-secondary text-white px-6 py-3 text-sm font-medium"
+            >
+              Get Started
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </div>
       )}
