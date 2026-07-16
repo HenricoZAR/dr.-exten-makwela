@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
-import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, ChevronDown, ChevronUp, Calendar, Clock } from "lucide-react";
 import { Header, Footer, ScrollToTop, SERVICES_DROPDOWN } from "@/components/site-chrome";
 import heroImg from "@/assets/relationships-therapy.jpg.asset.json";
 import couplesImg from "@/assets/couples-counselling.jpg.asset.json";
