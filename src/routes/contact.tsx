@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Header, Footer, ScrollToTop, PillButton } from "@/components/site-chrome";
+import contactTop from "@/assets/contact-page-top.jpg.asset.json";
+import contactBottom from "@/assets/contact-page-bottom.jpg.asset.json";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -25,16 +27,20 @@ export const Route = createFileRoute("/contact")({
 
 const LOCATIONS = [
   {
-    name: "Apple Valley",
-    address: ["14960 Florence Trail", "Apple Valley, MN 55124"],
-    open: ["Monday-Sunday,", "9am-7pm EST"],
-    img: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
+    name: "Polokwane",
+    address: ["Seshego-B, Polokwane, 0742"],
+    open: ["Monday – Friday,", "8am – 6pm SAST"],
+    mapEmbed:
+      "https://www.google.com/maps?q=Seshego-B,+Polokwane,+0742&output=embed",
+    directions: "https://maps.app.goo.gl/15Lc4j3MNB6npPvB9",
   },
   {
-    name: "White Bear Lake",
-    address: ["2401 East Buffalo St.", "White Bear Lake, MN 55110"],
-    open: ["Monday-Sunday,", "9am-7pm EST"],
-    img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80",
+    name: "Midrand",
+    address: ["563 Old Pretoria Rd,", "Halfway House, Midrand, 1685"],
+    open: ["Monday – Friday,", "8am – 6pm SAST"],
+    mapEmbed:
+      "https://www.google.com/maps?q=563+Old+Pretoria+Rd,+Halfway+House,+Midrand,+1685&output=embed",
+    directions: "https://maps.app.goo.gl/rrDUtwGqiuKRjKAH7",
   },
 ];
 
@@ -62,28 +68,31 @@ function ContactPage() {
             <div className="p-8 md:p-14 lg:p-16">
               <h1 className="text-[2.5rem] md:text-[3.75rem] leading-[1.05]">
                 <span className="italic-serif font-medium">Contact us</span> easily
-                online, by phone or by dropping In
+                online, by phone or by dropping in
               </h1>
               <p className="mt-6 text-[17px] text-text max-w-lg">
-                Start your path to psychological wellness with our thoroughly
+                Start your path to psychological wellness with our carefully
                 selected specialists.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-8">
                 <PillButton variant="primary" as="a" href="#ask">
-                  Refer a Patient
+                  Call Us Today
                 </PillButton>
                 <div className="flex items-center gap-5">
                   <span className="h-10 w-px bg-border" />
                   <div>
                     <p className="eyebrow">Give us a call:</p>
                     <p className="mt-1 text-xl text-secondary font-medium">
-                      + 0800 2336 7811
+                      +27 (0)11 781 3495
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="h-full min-h-[380px] lg:min-h-[520px] bg-[url('https://images.unsplash.com/photo-1541199249251-f713e6145474?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center" />
+            <div
+              className="h-full min-h-[380px] lg:min-h-[520px] bg-cover bg-center"
+              style={{ backgroundImage: `url('${contactTop.url}')` }}
+            />
           </div>
         </div>
       </section>
@@ -97,46 +106,36 @@ function ContactPage() {
               Information
             </h2>
             <p className="mt-6 text-[16px] text-text max-w-md">
-              Learn more about our clinic and doctors and why they are trusted by
-              so many families in our community.
+              Learn more about our practice and why we are trusted by so many
+              individuals and families in our community.
             </p>
             <div className="mt-10 grid grid-cols-2 gap-8 max-w-md">
               <div>
                 <p className="eyebrow">Address:</p>
                 <p className="mt-3 text-secondary">
-                  14960 Florence Trail
+                  Isibalo House, Koch Street
                   <br />
-                  Apple Valley, MN
-                  <br />
-                  55124
+                  Salvokop, Pretoria, 0002
                 </p>
               </div>
               <div>
                 <p className="eyebrow">Open:</p>
                 <p className="mt-3 text-secondary">
-                  Monday-Sunday,
+                  Monday – Friday,
                   <br />
-                  9am-7pm EST
+                  8am – 6pm SAST
                 </p>
               </div>
             </div>
           </div>
-          <div className="relative rounded-[1.75rem] overflow-hidden shadow-[0_25px_60px_-25px_rgba(25,13,57,0.2)] bg-[#e9e9e9] aspect-[16/11]">
-            <div
-              className="absolute inset-0 bg-cover bg-center opacity-90"
-              style={{
-                backgroundImage:
-                  "url('https://maps.googleapis.com/maps/api/staticmap?center=51.5033,-0.1195&zoom=15&size=1200x800&scale=2&style=feature:all|saturation:-100')",
-              }}
+          <div className="relative rounded-[1.75rem] overflow-hidden shadow-[0_25px_60px_-25px_rgba(25,13,57,0.2)] aspect-[16/11]">
+            <iframe
+              title="Isibalo House, Salvokop, Pretoria"
+              src="https://www.google.com/maps?q=Isibalo+House,+Koch+Street,+Salvokop,+Pretoria,+0002&output=embed"
+              className="absolute inset-0 h-full w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <MapPin className="h-10 w-10 text-secondary/70" />
-            </div>
-            <div className="absolute bottom-0 inset-x-0 bg-secondary/85 text-white text-center text-sm px-6 py-4">
-              This is a placeholder map for demonstration purposes.
-              <br />
-              To display a real Google Map, use the Google Maps widget
-            </div>
           </div>
         </div>
       </section>
@@ -151,11 +150,12 @@ function ContactPage() {
             {LOCATIONS.map((loc) => (
               <div key={loc.name}>
                 <div className="rounded-[1.75rem] overflow-hidden aspect-[4/3]">
-                  <img
-                    src={loc.img}
-                    alt={loc.name}
-                    className="h-full w-full object-cover"
+                  <iframe
+                    title={loc.name}
+                    src={loc.mapEmbed}
+                    className="h-full w-full border-0"
                     loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
                   />
                 </div>
                 <h3 className="mt-8 text-[2rem]">{loc.name}</h3>
@@ -184,7 +184,9 @@ function ContactPage() {
                   </div>
                 </div>
                 <a
-                  href="#"
+                  href={loc.directions}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group mt-6 inline-flex items-center gap-2 text-secondary font-medium hover:text-tertiary transition-colors"
                 >
                   Get Directions
@@ -201,7 +203,7 @@ function ContactPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20 md:py-28 grid lg:grid-cols-2 gap-14 items-center">
           <div className="rounded-[1.75rem] overflow-hidden aspect-[4/5]">
             <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=80"
+              src={contactBottom.url}
               alt="Contact us"
               className="h-full w-full object-cover"
               loading="lazy"
