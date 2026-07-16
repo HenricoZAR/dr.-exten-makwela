@@ -184,6 +184,14 @@ export function Header() {
                 </Link>
               )
             )}
+            <a
+              href="/#contact"
+              onClick={() => setOpen(false)}
+              className="sm:hidden mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-secondary text-white px-6 py-3 text-sm font-medium"
+            >
+              Get Started
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </div>
       )}
