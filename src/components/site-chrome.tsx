@@ -23,13 +23,12 @@ export const SERVICES_DROPDOWN: { label: string; to: string }[] = [
   { label: "Childhood Abuse", to: "/" },
 ];
 
-const NAV: { label: string; hasMenu: boolean; to?: string }[] = [
+const NAV: { label: string; hasMenu: boolean; to?: string; href?: string }[] = [
   { label: "Home", hasMenu: true, to: "/" },
   { label: "About Us", hasMenu: false, to: "/about-us" },
   { label: "Services", hasMenu: true },
-  { label: "Therapists", hasMenu: true, to: "/" },
-  { label: "Pages", hasMenu: true, to: "/" },
-  { label: "Blog", hasMenu: false, to: "/" },
+  { label: "Contact", hasMenu: false, to: "/contact" },
+  { label: "Blog", hasMenu: false, href: "/#mindfulness-blog" },
 ];
 
 export function Logo({ dark = false }: { dark?: boolean }) {
@@ -113,14 +112,25 @@ export function Header() {
               );
             }
             return (
-              <Link
-                key={n.label}
-                to={n.to || "/"}
-                className="flex items-center gap-1 text-sm font-medium text-secondary hover:text-tertiary transition-colors"
-              >
-                {n.label}
-                {n.hasMenu && <ChevronDown className="h-3.5 w-3.5" />}
-              </Link>
+              n.href ? (
+                <a
+                  key={n.label}
+                  href={n.href}
+                  className="flex items-center gap-1 text-sm font-medium text-secondary hover:text-tertiary transition-colors"
+                >
+                  {n.label}
+                  {n.hasMenu && <ChevronDown className="h-3.5 w-3.5" />}
+                </a>
+              ) : (
+                <Link
+                  key={n.label}
+                  to={n.to || "/"}
+                  className="flex items-center gap-1 text-sm font-medium text-secondary hover:text-tertiary transition-colors"
+                >
+                  {n.label}
+                  {n.hasMenu && <ChevronDown className="h-3.5 w-3.5" />}
+                </Link>
+              )
             );
           })}
         </nav>
@@ -162,6 +172,10 @@ export function Header() {
                     ))}
                   </div>
                 </div>
+              ) : n.href ? (
+                <a key={n.label} href={n.href} className="py-2 text-secondary">
+                  {n.label}
+                </a>
               ) : (
                 <Link key={n.label} to={n.to || "/"} className="py-2 text-secondary">
                   {n.label}
@@ -226,7 +240,7 @@ export function Footer() {
               { label: "About Us", to: "/about-us" as const },
               { label: "Our Services", to: "/" as const },
               { label: "Blog", to: "/" as const },
-              { label: "Contacts", to: "/" as const },
+              { label: "Contacts", to: "/contact" as const },
               { label: "Shop", to: "/" as const },
               { label: "Image Credits", to: "/" as const },
             ].map((i) => (

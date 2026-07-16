@@ -577,7 +577,7 @@ function BookPromo() {
 
 function Blog() {
   return (
-    <section className="soft-bg">
+    <section id="mindfulness-blog" className="soft-bg">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-24 md:py-32">
         <h2 className="text-center text-[2.25rem] md:text-[3.5rem]">
           Mindfulness <span className="italic-serif">Blog</span>
