@@ -225,8 +225,8 @@ function AboutUsPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 md:py-24 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="overflow-hidden rounded-[2rem] aspect-[4/3] bg-alternate">
               <img
-                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1400&q=80"
-                alt="Therapy session"
+                src={aboutHero.url}
+                alt="Therapy session with Dr Exten Makwela"
                 className="h-full w-full object-cover"
                 loading="lazy"
               />
@@ -234,11 +234,11 @@ function AboutUsPage() {
             <div>
               <p className="eyebrow">About Us</p>
               <h1 className="mt-4 text-[2.5rem] md:text-[4rem] leading-[1.05]">
-                Why We are the <span className="italic-serif">Best Clinic?</span>
+                Why Choose Our <span className="italic-serif">Practice?</span>
               </h1>
               <p className="mt-6 text-text text-base md:text-lg leading-relaxed max-w-xl">
-                World-class rehabilitation solutions and individualized recovery plans, from
-                acute care to ongoing outpatient treatment and beyond.
+                Evidence-based psychological care and individualised treatment plans, from
+                initial assessment through to ongoing therapy and long-term wellbeing support.
               </p>
             </div>
           </div>
@@ -250,17 +250,18 @@ function AboutUsPage() {
             <div>
               <h2 className="text-[2rem] md:text-[3.25rem]">About Us</h2>
               <p className="mt-6 text-text text-base md:text-lg leading-relaxed max-w-xl">
-                Community is everything at Corlears. It's who we are and how things get done.
-                Everyone here is motivated by a deep commitment to making sure each child and
-                family feels welcome and included. When everyone feels like they belong, we
-                are stronger and smarter together. We're a community driven to make the world
-                a better place — starting in our
+                At Dr Exten Makwela's practice, we believe that healing happens in connection.
+                Our approach is grounded in compassion, clinical excellence and a deep respect
+                for each person's unique journey. We are motivated by a genuine commitment to
+                ensuring every client feels heard, valued and supported. When you feel
+                understood and safe, meaningful change becomes possible. We are a practice
+                driven to help people build better lives.
               </p>
             </div>
             <div className="overflow-hidden rounded-[2rem] aspect-[4/3] bg-alternate">
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1400&q=80"
-                alt="Community group therapy"
+                src={aboutMid.url}
+                alt="Dr Exten Makwela practice reception"
                 className="h-full w-full object-cover"
                 loading="lazy"
               />
@@ -268,42 +269,7 @@ function AboutUsPage() {
           </div>
         </section>
 
-        {/* 3. Team */}
-        <section className="soft-bg">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 md:py-24">
-            <div className="text-center">
-              <p className="eyebrow">Meet Our Team</p>
-              <h2 className="mt-4 text-[2rem] md:text-[3.25rem]">
-                Our <span className="italic-serif">Professional Team</span>
-              </h2>
-            </div>
-            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {TEAM.map((t) => (
-                <div
-                  key={t.name}
-                  className="group bg-background rounded-[1.75rem] overflow-hidden shadow-[0_10px_40px_-25px_rgba(25,13,57,0.2)] hover:shadow-[0_25px_60px_-20px_rgba(25,13,57,0.25)] hover:-translate-y-1 transition-all duration-300"
-                >
-                  <div className="aspect-[4/5] bg-alternate grid place-items-center overflow-hidden">
-                    <User className="h-24 w-24 text-tertiary/50" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-[1.5rem] leading-tight">{t.name}</h3>
-                    <p className="mt-1 text-tertiary text-sm">{t.role}</p>
-                    <a
-                      href="#"
-                      className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-secondary group-hover:text-tertiary transition-colors"
-                    >
-                      Open Profile
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 4. Conditions */}
+        {/* 3. Conditions */}
         <section>
           <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 md:py-24">
             <h2 className="text-[2rem] md:text-[3.25rem] max-w-4xl">
@@ -340,7 +306,7 @@ function AboutUsPage() {
           </div>
         </section>
 
-        {/* 5. Testimonials */}
+        {/* 4. Testimonials */}
         <section className="soft-bg">
           <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 md:py-24">
             <h2 className="text-center text-[2rem] md:text-[3.25rem]">
@@ -365,9 +331,12 @@ function AboutUsPage() {
                     {t.text}
                   </p>
                   <div className="mt-6 flex items-center gap-3 justify-center">
-                    <div className="h-9 w-9 rounded-full bg-alternate grid place-items-center">
-                      <User className="h-5 w-5 text-tertiary" />
-                    </div>
+                    <img
+                      src={t.photo}
+                      alt={t.name}
+                      className="h-9 w-9 rounded-full object-cover"
+                      loading="lazy"
+                    />
                     <span className="text-secondary font-medium text-sm">{t.name}</span>
                   </div>
                 </div>
@@ -375,6 +344,7 @@ function AboutUsPage() {
             </div>
           </div>
         </section>
+
 
         {/* 6. Appointment form */}
         <section>
