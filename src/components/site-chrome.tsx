@@ -240,7 +240,7 @@ export function Footer() {
               { label: "About Us", to: "/about-us" as const },
               { label: "Our Services", to: "/" as const },
               { label: "Blog", to: "/" as const },
-              { label: "Contacts", to: "/" as const },
+              { label: "Contacts", to: "/contact" as const },
               { label: "Shop", to: "/" as const },
               { label: "Image Credits", to: "/" as const },
             ].map((i) => (
