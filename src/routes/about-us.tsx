@@ -2,6 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronDown, Calendar, Clock, Star, User } from "lucide-react";
 import { Header, Footer, ScrollToTop, PillButton } from "@/components/site-chrome";
+import anxietySvg from "@/assets/anxiety.svg.asset.json";
+import relationshipsSvg from "@/assets/relationships.svg.asset.json";
+import eatingSvg from "@/assets/eating_disorders.svg.asset.json";
+import depressionSvg from "@/assets/depression.svg.asset.json";
 
 export const Route = createFileRoute("/about-us")({
   head: () => ({
@@ -208,10 +212,10 @@ const TEAM = [
 ];
 
 const CONDITIONS = [
-  { label: "Anxiety", to: "/anxiety-therapy" as const },
-  { label: "Relationships", to: "/" as const },
-  { label: "Eating Disorders", to: "/" as const },
-  { label: "Depression", to: "/" as const },
+  { label: "Anxiety", to: "/anxiety-therapy" as const, icon: anxietySvg.url },
+  { label: "Relationships", to: "/" as const, icon: relationshipsSvg.url },
+  { label: "Eating Disorders", to: "/" as const, icon: eatingSvg.url },
+  { label: "Depression", to: "/" as const, icon: depressionSvg.url },
 ];
 
 const TESTIMONIALS = [
@@ -344,8 +348,8 @@ function AboutUsPage() {
                 >
                   <h3 className="text-[1.5rem]">{c.label}</h3>
                   <div className="my-8 flex-1 grid place-items-center">
-                    <div className="h-28 w-28 rounded-full bg-background/70 grid place-items-center">
-                      <User className="h-14 w-14 text-secondary/60" />
+                    <div className="h-28 w-28 rounded-full bg-background/70 grid place-items-center p-3">
+                      <img src={c.icon} alt={c.label} className="h-full w-full object-contain" />
                     </div>
                   </div>
                   <Link
