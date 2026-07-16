@@ -163,6 +163,8 @@ function Logo({ dark = false }: { dark?: boolean }) {
     </a>
   );
 }
+
+function PillButton({
   children,
   variant = "primary",
   as: As = "button",
