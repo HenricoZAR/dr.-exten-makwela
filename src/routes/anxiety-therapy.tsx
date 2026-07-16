@@ -318,7 +318,7 @@ export function AnxietyTherapy() {
               <h1 className="text-[2.5rem] md:text-[4rem] leading-[1.05]">Anxiety Therapy</h1>
               <div className="mt-8 overflow-hidden rounded-[2rem] aspect-[16/9] bg-alternate">
                 <img
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1600&q=80"
+                  src={anxietyTopImg.url}
                   alt="Anxiety therapy session"
                   className="h-full w-full object-cover"
                   loading="lazy"
