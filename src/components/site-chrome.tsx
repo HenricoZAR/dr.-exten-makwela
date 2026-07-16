@@ -16,11 +16,11 @@ import logoWhite from "@/assets/exten-makwela-logo-white.svg.asset.json";
 
 export const SERVICES_DROPDOWN: { label: string; to: string }[] = [
   { label: "Anxiety", to: "/anxiety-therapy" },
-  { label: "Relationships", to: "/" },
-  { label: "Eating Disorders", to: "/" },
-  { label: "Depression", to: "/" },
-  { label: "Trauma", to: "/" },
-  { label: "Childhood Abuse", to: "/" },
+  { label: "Relationships", to: "/relationships" },
+  { label: "Eating Disorders", to: "/eating-disorders" },
+  { label: "Depression", to: "/depression" },
+  { label: "Trauma", to: "/trauma" },
+  { label: "Childhood Abuse", to: "/childhood-abuse" },
 ];
 
 const NAV: { label: string; hasMenu: boolean; to?: string; href?: string }[] = [
