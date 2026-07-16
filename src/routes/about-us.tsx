@@ -27,40 +27,6 @@ export const Route = createFileRoute("/about-us")({
   component: AboutUsPage,
 });
 
-/* ---------------- Floating decorative widgets ---------------- */
-
-function FloatingWidgets() {
-  return (
-    <div className="pointer-events-none fixed right-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-3 md:flex">
-      <div className="pointer-events-auto grid h-16 w-16 place-items-center rounded-l-xl bg-[#f36f34] text-white shadow-lg">
-        <div className="flex flex-col items-center text-[11px] font-medium">
-          <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 mb-0.5">
-            <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" />
-            <path d="M8 12h8M12 8v8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
-          Skins
-        </div>
-      </div>
-      <div className="pointer-events-auto grid h-16 w-16 place-items-center rounded-l-xl bg-[#22c55e] text-white shadow-lg">
-        <div className="flex flex-col items-center text-[11px] font-medium">
-          <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 mb-0.5">
-            <path
-              d="M6 6h13l-1.5 8H8L6 4H3"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <circle cx="9" cy="19" r="1.4" fill="currentColor" />
-            <circle cx="17" cy="19" r="1.4" fill="currentColor" />
-          </svg>
-          Buy Now
-        </div>
-      </div>
-    </div>
-  );
-}
-
 /* ---------------- Date/Time pickers (mirrors /anxiety-therapy) ---------------- */
 
 function PickerCol({
@@ -247,7 +213,6 @@ function AboutUsPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <FloatingWidgets />
 
       <main>
         {/* 1. Hero */}
