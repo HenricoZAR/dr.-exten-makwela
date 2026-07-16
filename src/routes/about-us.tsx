@@ -213,7 +213,6 @@ function AboutUsPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <FloatingWidgets />
 
       <main>
         {/* 1. Hero */}

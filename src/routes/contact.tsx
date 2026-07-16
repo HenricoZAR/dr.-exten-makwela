@@ -54,7 +54,6 @@ function ContactPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <FloatingWidgets />
 
       {/* 1. Hero */}
       <section className="soft-bg">
