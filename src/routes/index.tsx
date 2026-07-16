@@ -1,23 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useRef, useState } from "react";
 import {
-  Menu,
-  X,
-  Search,
   ArrowRight,
-  ArrowUp,
-  ArrowUpRight,
   Play,
   ShieldCheck,
   Target,
   Award,
-  Facebook,
-  Instagram,
-  Twitter,
-  ChevronDown,
 } from "lucide-react";
-import logoColour from "@/assets/exten-makwela-logo-colour.svg.asset.json";
-import logoWhite from "@/assets/exten-makwela-logo-white.svg.asset.json";
+import { Header, Footer, ScrollToTop, PillButton } from "@/components/site-chrome";
 import heroImgAsset from "@/assets/exten-web-header.png.asset.json";
 import drRobertsImgAsset from "@/assets/meet-dr-makwela.png.asset.json";
 import sessionImgAsset from "@/assets/professional-credentials-right.jpg.asset.json";
@@ -45,6 +35,7 @@ import blog3 from "@/assets/blog-3.jpg";
 export const Route = createFileRoute("/")({
   component: Index,
 });
+
 
 const NAV = [
   { label: "Home", hasMenu: true },
