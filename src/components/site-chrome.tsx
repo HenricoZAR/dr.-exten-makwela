@@ -255,17 +255,21 @@ export function Footer() {
             ))}
           </ul>
         </div>
-        <FooterCol
-          title="Services"
-          items={[
-            "Anxiety",
-            "Relationships",
-            "Eating Disorders",
-            "Depression",
-            "Trauma",
-            "Childhood Abuse",
-          ]}
-        />
+        <div>
+          <h4 className="text-white text-2xl">Services</h4>
+          <ul className="mt-6 space-y-3">
+            {SERVICES_DROPDOWN.map((i) => (
+              <li key={i.label}>
+                <Link
+                  to={i.to}
+                  className="text-white/70 hover:text-primary transition-colors text-[15px] inline-flex items-center gap-1"
+                >
+                  {i.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
         <FooterCol
           title="Therapists"
           items={[
