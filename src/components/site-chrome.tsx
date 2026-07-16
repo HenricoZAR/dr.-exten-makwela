@@ -172,6 +172,10 @@ export function Header() {
                     ))}
                   </div>
                 </div>
+              ) : n.href ? (
+                <a key={n.label} href={n.href} className="py-2 text-secondary">
+                  {n.label}
+                </a>
               ) : (
                 <Link key={n.label} to={n.to || "/"} className="py-2 text-secondary">
                   {n.label}
