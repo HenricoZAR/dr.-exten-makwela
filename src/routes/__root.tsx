@@ -77,20 +77,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Mental Care — Psychological & Behavioural Therapies in London" },
+      { title: "Dr. Exten Makwela — Psychological & Behavioural Therapist" },
       {
         name: "description",
         content:
-          "Private psychotherapy and counselling for adults, adolescents and couples in the heart of London. CBT therapy, coaching and workplace wellness.",
+          "Dr. Exten Makwela: Psychological & Behavioural Therapist in South Africa",
       },
       {
         property: "og:title",
-        content: "Mental Care — Psychological & Behavioural Therapies in London",
+        content: "Dr. Exten Makwela — Psychological & Behavioural Therapist",
       },
       {
         property: "og:description",
         content:
-          "Private psychotherapy and counselling for adults, adolescents and couples in the heart of London.",
+          "Dr. Exten Makwela: Psychological & Behavioural Therapist in South Africa",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
