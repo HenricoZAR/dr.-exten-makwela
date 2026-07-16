@@ -16,11 +16,11 @@ import logoWhite from "@/assets/exten-makwela-logo-white.svg.asset.json";
 
 export const SERVICES_DROPDOWN: { label: string; to: string }[] = [
   { label: "Anxiety", to: "/anxiety-therapy" },
-  { label: "Relationships", to: "/" },
-  { label: "Eating Disorders", to: "/" },
-  { label: "Depression", to: "/" },
-  { label: "Trauma", to: "/" },
-  { label: "Childhood Abuse", to: "/" },
+  { label: "Relationships", to: "/relationships" },
+  { label: "Eating Disorders", to: "/eating-disorders" },
+  { label: "Depression", to: "/depression" },
+  { label: "Trauma", to: "/trauma" },
+  { label: "Childhood Abuse", to: "/childhood-abuse" },
 ];
 
 const NAV: { label: string; hasMenu: boolean; to?: string; href?: string }[] = [
@@ -255,17 +255,21 @@ export function Footer() {
             ))}
           </ul>
         </div>
-        <FooterCol
-          title="Services"
-          items={[
-            "Anxiety",
-            "Relationships",
-            "Eating Disorders",
-            "Depression",
-            "Trauma",
-            "Childhood Abuse",
-          ]}
-        />
+        <div>
+          <h4 className="text-white text-2xl">Services</h4>
+          <ul className="mt-6 space-y-3">
+            {SERVICES_DROPDOWN.map((i) => (
+              <li key={i.label}>
+                <Link
+                  to={i.to}
+                  className="text-white/70 hover:text-primary transition-colors text-[15px] inline-flex items-center gap-1"
+                >
+                  {i.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
         <FooterCol
           title="Therapists"
           items={[

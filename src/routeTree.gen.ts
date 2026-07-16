@@ -9,14 +9,44 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TraumaRouteImport } from './routes/trauma'
+import { Route as RelationshipsRouteImport } from './routes/relationships'
+import { Route as EatingDisordersRouteImport } from './routes/eating-disorders'
+import { Route as DepressionRouteImport } from './routes/depression'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ChildhoodAbuseRouteImport } from './routes/childhood-abuse'
 import { Route as AnxietyTherapyRouteImport } from './routes/anxiety-therapy'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TraumaRoute = TraumaRouteImport.update({
+  id: '/trauma',
+  path: '/trauma',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RelationshipsRoute = RelationshipsRouteImport.update({
+  id: '/relationships',
+  path: '/relationships',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EatingDisordersRoute = EatingDisordersRouteImport.update({
+  id: '/eating-disorders',
+  path: '/eating-disorders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DepressionRoute = DepressionRouteImport.update({
+  id: '/depression',
+  path: '/depression',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChildhoodAbuseRoute = ChildhoodAbuseRouteImport.update({
+  id: '/childhood-abuse',
+  path: '/childhood-abuse',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AnxietyTherapyRoute = AnxietyTherapyRouteImport.update({
@@ -39,43 +69,126 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/anxiety-therapy': typeof AnxietyTherapyRoute
+  '/childhood-abuse': typeof ChildhoodAbuseRoute
   '/contact': typeof ContactRoute
+  '/depression': typeof DepressionRoute
+  '/eating-disorders': typeof EatingDisordersRoute
+  '/relationships': typeof RelationshipsRoute
+  '/trauma': typeof TraumaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/anxiety-therapy': typeof AnxietyTherapyRoute
+  '/childhood-abuse': typeof ChildhoodAbuseRoute
   '/contact': typeof ContactRoute
+  '/depression': typeof DepressionRoute
+  '/eating-disorders': typeof EatingDisordersRoute
+  '/relationships': typeof RelationshipsRoute
+  '/trauma': typeof TraumaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/anxiety-therapy': typeof AnxietyTherapyRoute
+  '/childhood-abuse': typeof ChildhoodAbuseRoute
   '/contact': typeof ContactRoute
+  '/depression': typeof DepressionRoute
+  '/eating-disorders': typeof EatingDisordersRoute
+  '/relationships': typeof RelationshipsRoute
+  '/trauma': typeof TraumaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about-us' | '/anxiety-therapy' | '/contact'
+  fullPaths:
+    | '/'
+    | '/about-us'
+    | '/anxiety-therapy'
+    | '/childhood-abuse'
+    | '/contact'
+    | '/depression'
+    | '/eating-disorders'
+    | '/relationships'
+    | '/trauma'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about-us' | '/anxiety-therapy' | '/contact'
-  id: '__root__' | '/' | '/about-us' | '/anxiety-therapy' | '/contact'
+  to:
+    | '/'
+    | '/about-us'
+    | '/anxiety-therapy'
+    | '/childhood-abuse'
+    | '/contact'
+    | '/depression'
+    | '/eating-disorders'
+    | '/relationships'
+    | '/trauma'
+  id:
+    | '__root__'
+    | '/'
+    | '/about-us'
+    | '/anxiety-therapy'
+    | '/childhood-abuse'
+    | '/contact'
+    | '/depression'
+    | '/eating-disorders'
+    | '/relationships'
+    | '/trauma'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutUsRoute: typeof AboutUsRoute
   AnxietyTherapyRoute: typeof AnxietyTherapyRoute
+  ChildhoodAbuseRoute: typeof ChildhoodAbuseRoute
   ContactRoute: typeof ContactRoute
+  DepressionRoute: typeof DepressionRoute
+  EatingDisordersRoute: typeof EatingDisordersRoute
+  RelationshipsRoute: typeof RelationshipsRoute
+  TraumaRoute: typeof TraumaRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/trauma': {
+      id: '/trauma'
+      path: '/trauma'
+      fullPath: '/trauma'
+      preLoaderRoute: typeof TraumaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/relationships': {
+      id: '/relationships'
+      path: '/relationships'
+      fullPath: '/relationships'
+      preLoaderRoute: typeof RelationshipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eating-disorders': {
+      id: '/eating-disorders'
+      path: '/eating-disorders'
+      fullPath: '/eating-disorders'
+      preLoaderRoute: typeof EatingDisordersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/depression': {
+      id: '/depression'
+      path: '/depression'
+      fullPath: '/depression'
+      preLoaderRoute: typeof DepressionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/childhood-abuse': {
+      id: '/childhood-abuse'
+      path: '/childhood-abuse'
+      fullPath: '/childhood-abuse'
+      preLoaderRoute: typeof ChildhoodAbuseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/anxiety-therapy': {
@@ -106,7 +219,12 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutUsRoute: AboutUsRoute,
   AnxietyTherapyRoute: AnxietyTherapyRoute,
+  ChildhoodAbuseRoute: ChildhoodAbuseRoute,
   ContactRoute: ContactRoute,
+  DepressionRoute: DepressionRoute,
+  EatingDisordersRoute: EatingDisordersRoute,
+  RelationshipsRoute: RelationshipsRoute,
+  TraumaRoute: TraumaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
