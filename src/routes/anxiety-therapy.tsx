@@ -306,8 +306,8 @@ function AnxietyTherapy() {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="soft-bg">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-14 md:py-20 grid lg:grid-cols-[320px_1fr] gap-10 lg:gap-16">
-          <div className="space-y-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-14 md:py-20 grid lg:grid-cols-[320px_1fr] gap-10 lg:gap-16 items-start">
+          <div className="lg:sticky lg:top-28 self-start space-y-8">
             <Sidebar />
             <BookingCard />
           </div>
@@ -329,12 +329,11 @@ function AnxietyTherapy() {
               <h2 className="text-[2rem] md:text-[3rem]">About Anxiety Services</h2>
               <p className="mt-6 text-text text-base md:text-lg leading-relaxed">
                 Our Anxiety Service is committed to helping individuals manage and overcome
-                anxiety disorders through comprehensive, evidence-based treatment. We
-                understand that anxiety can significantly impact your daily life, and our
-                team of skilled professionals is here to provide support, guidance, and
-                effective interventions. We offer personalized treatment plans tailored to
-                each individual's unique needs, utilizing the latest research and therapeutic
-                techniques to promote recovery and enhance well-being.
+                anxiety disorders through evidence-based treatment that is both practical and
+                compassionate. We understand that anxiety can affect your work, relationships
+                and overall quality of life. Our approach uses the latest therapeutic
+                techniques, creating personalised plans that address your specific concerns
+                and help you regain control of your wellbeing.
               </p>
             </section>
 
@@ -350,27 +349,22 @@ function AnxietyTherapy() {
             <section>
               <h2 className="text-[2rem] md:text-[3rem]">Sessions Offered</h2>
               <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {SPECIALISTS.map((s) => (
+                {SESSIONS.map((s) => (
                   <div
-                    key={s.name}
-                    className="group bg-background rounded-[1.75rem] overflow-hidden shadow-[0_10px_40px_-25px_rgba(25,13,57,0.2)] hover:shadow-[0_25px_60px_-20px_rgba(25,13,57,0.25)] hover:-translate-y-1 transition-all duration-300"
+                    key={s.title}
+                    className="group bg-background rounded-[1.75rem] overflow-hidden shadow-[0_10px_40px_-25px_rgba(25,13,57,0.2)] hover:shadow-[0_25px_60px_-20px_rgba(25,13,57,0.25)] hover:-translate-y-1 transition-all duration-300 flex flex-col"
                   >
-                    <div className="aspect-[4/5] bg-alternate grid place-items-center">
-                      <svg viewBox="0 0 200 200" className="w-24 h-24 text-secondary/40" fill="currentColor">
-                        <circle cx="100" cy="75" r="35" />
-                        <path d="M30 190 q0 -60 70 -60 q70 0 70 60 z" />
-                      </svg>
+                    <div className="aspect-[7/7] overflow-hidden basis-[70%]">
+                      <img
+                        src={s.image}
+                        alt={s.title}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
                     </div>
-                    <div className="p-6">
-                      <h3 className="text-[1.5rem] md:text-[1.75rem] leading-tight">{s.name}</h3>
-                      <p className="mt-1 text-tertiary text-sm">{s.role}</p>
-                      <a
-                        href="#"
-                        className="mt-6 inline-flex items-center gap-2 text-secondary font-medium group/link"
-                      >
-                        Open Profile
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover/link:translate-x-1" />
-                      </a>
+                    <div className="p-6 basis-[30%]">
+                      <h3 className="text-[1.5rem] md:text-[1.75rem] leading-tight">{s.title}</h3>
+                      <p className="mt-1 text-tertiary text-sm">{s.subtitle}</p>
                     </div>
                   </div>
                 ))}
