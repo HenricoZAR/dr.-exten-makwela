@@ -2,6 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronDown, Calendar, Clock, Star, User } from "lucide-react";
 import { Header, Footer, ScrollToTop, PillButton } from "@/components/site-chrome";
+import anxietySvg from "@/assets/anxiety.svg.asset.json";
+import relationshipsSvg from "@/assets/relationships.svg.asset.json";
+import eatingSvg from "@/assets/eating_disorders.svg.asset.json";
+import depressionSvg from "@/assets/depression.svg.asset.json";
 
 export const Route = createFileRoute("/about-us")({
   head: () => ({
