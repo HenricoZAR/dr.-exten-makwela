@@ -74,27 +74,27 @@ const EXPERTISE = [
 ];
 
 const TOOLS = [
-  "Get unstuck and find purpose in your life",
-  "Increase your self-efficacy and self-esteem",
-  "Sustain your mental health and wellbeing",
+  "Find clear direction and purpose in your life",
+  "Boost your self-belief and self-worth",
+  "Maintain your mental health and wellbeing",
   "Build resilience and lasting inner strength",
 ];
 
 const PRICING = [
   {
     tag: "Initial Consultation",
-    price: "300",
-    body: "We will clarify your treatment goals and develop a plan that may include medication, therapy, or a combination of both.",
+    price: "R 4,926",
+    body: "We will clarify your treatment goals and develop a plan that may include medicine, therapy, or a mix of both.",
   },
   {
     tag: "Long Session",
-    price: "250",
-    body: "A 60 minute supportive therapy session to discuss how you are feeling and manage your medications, if necessary.",
+    price: "R 4,105",
+    body: "A 60 minute supportive therapy session to discuss how you are feeling and manage your medicine, if necessary.",
   },
   {
     tag: "Short Session",
-    price: "150",
-    body: "A 20 minute supportive check in to see how you're doing, and to review/adjust your meds if applicable.",
+    price: "R 2,463",
+    body: "A 20 minute supportive check-in to see how you're doing, and to review/adjust your own medicine if applicable.",
   },
 ];
 
@@ -104,7 +104,7 @@ const TESTIMONIALS = [
     name: "Debbie S.",
   },
   {
-    body: "The care I received completely reshaped how I approach stress and my personal wellbeing. I feel genuinely supported at every step of the process.",
+    body: "The support I received completely changed how I manage stress and my overall wellbeing. I feel truly supported throughout every stage of the journey.",
     name: "Marcus L.",
   },
   {
@@ -262,7 +262,7 @@ function Hero() {
             <div className="bg-background rounded-[2rem] p-8 md:p-12 max-w-xl shadow-[0_20px_60px_-20px_rgba(25,13,57,0.25)]">
               <h1 className="text-[2.5rem] md:text-[3.5rem] leading-[1.05]">
                 Psychological & Behavioural Therapies{" "}
-                <span className="italic-serif">in the Heart of London</span>
+                <span className="italic-serif">in the Heart of Pretoria</span>
               </h1>
               <p className="mt-6 text-base md:text-lg text-text max-w-md">
                 Private psychotherapy and counselling for adults, adolescents and
@@ -292,9 +292,9 @@ function Mission() {
           <span className="italic-serif">for the better</span>.
         </h2>
         <p className="mt-8 max-w-3xl mx-auto text-base md:text-lg text-text">
-          Navigate stress, let go of high-functioning anxiety, and elevate your
-          performance and wellbeing through bespoke 1:1 Coaching, CBT Therapy,
-          and Workplace Wellness Programs.
+          Navigate stress, let go of high-functioning anxiety, and improve your
+          performance and wellbeing through personalised 1-on-1 Coaching, CBT
+          Therapy, and Corporate Wellness Programmes.
         </p>
         <div className="mt-10 flex justify-center">
           <PillButton variant="outline" as="a" href="#expertise">
@@ -323,12 +323,11 @@ function MeetDoctor() {
         <div>
           <p className="eyebrow">Meet Dr. Makwela</p>
           <h2 className="mt-5 text-[2rem] md:text-[3rem]">
-            Psychologist, Cognitive Behavioural Therapist and High-Performance
-            Coach
+            Psychologist, Cognitive Behavioural Therapist and Executive Coach
           </h2>
           <p className="mt-6 text-text text-base md:text-lg max-w-lg">
-            I am an HCPC registered clinical & counselling psychologist based in
-            Brixton, south west London offering face-to-face and online sessions.
+            I am an HPCSA registered clinical & counselling psychologist based in
+            Salvokop, Pretoria, South Africa, offering face-to-face and online sessions.
           </p>
           <div className="mt-8">
             <PillButton variant="outline" as="a" href="#">
@@ -573,7 +572,7 @@ function Pricing() {
             Pricing <span className="italic-serif">Plans</span>
           </h2>
           <p className="mt-6 text-text text-base md:text-lg">
-            I offer both online therapy sessions and face-to-face sessions in my practice.
+            I offer both online therapy sessions and in-person sessions at my practice.
           </p>
         </div>
         <div className="mt-14 grid md:grid-cols-3 gap-6">
@@ -583,12 +582,12 @@ function Pricing() {
               className="group bg-background rounded-[1.75rem] p-8 md:p-10 shadow-[0_10px_40px_-25px_rgba(25,13,57,0.15)] hover:shadow-[0_25px_60px_-20px_rgba(25,13,57,0.25)] hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
               <p className="eyebrow text-secondary/80">{p.tag}</p>
-              <div className="mt-8 flex items-baseline gap-2">
+              <div className="mt-8 flex items-baseline gap-2 flex-wrap">
                 <span
                   className="text-secondary"
-                  style={{ fontFamily: "var(--font-serif)", fontSize: "4.5rem", lineHeight: 1 }}
+                  style={{ fontFamily: "var(--font-serif)", fontSize: "3.25rem", lineHeight: 1 }}
                 >
-                  {p.price}$
+                  {p.price}
                 </span>
                 <span className="text-text text-sm">per hour</span>
               </div>
@@ -616,7 +615,7 @@ function Testimonials() {
           What my clients <span className="italic-serif">say</span>
         </h2>
         <p className="mt-5 text-text">
-          Read why people love Mental Care.{" "}
+          Read why people trust my practice.{" "}
           <a href="#" className="text-secondary underline underline-offset-4">
             See all reviews
           </a>
@@ -754,17 +753,17 @@ function Values() {
     {
       icon: ShieldCheck,
       title: "Confidential",
-      body: "You will be provided with a safe, non-judgmental and confidential space for your concerns. At the same time you will be offered accountability and support to reflect and grow.",
+      body: "You will be provided with a safe, non-judgmental and private space for your concerns. At the same time you will be given accountability and support to reflect and develop.",
     },
     {
       icon: Target,
       title: "Results driven",
-      body: "You will be encouraged to think about what your goals are for our work together. I will help bring out your best and achieve more. The focus is on our individualised plan to get you realistic results in as short a time as possible.",
+      body: "You will be encouraged to think about what your goals are for our work together. I will help bring out your best and achieve more. The focus is on our individualised plan to give you real results in as short a time as possible.",
     },
     {
       icon: Award,
       title: "Expert",
-      body: "Over 20 years of experience in helping people make positive changes in their lives. Oxford University educated, clinical psychologist and executive coach.",
+      body: "Over 20 years of experience in helping people make positive changes in their lives. Pretoria University educated clinical psychologist and executive coach.",
     },
   ];
   return (
@@ -868,7 +867,7 @@ function Footer() {
         <div>
           <Logo dark />
           <p className="mt-6 text-white/70 max-w-xs text-[15px]">
-            Start your path to psychological wellness with our thoroughly selected specialists.
+            Start your path to psychological wellness with our carefully selected specialists.
           </p>
           <form
             onSubmit={(e) => e.preventDefault()}
