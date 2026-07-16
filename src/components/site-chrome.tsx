@@ -25,7 +25,7 @@ export const SERVICES_DROPDOWN: { label: string; to: string }[] = [
 
 const NAV: { label: string; hasMenu: boolean; to?: string }[] = [
   { label: "Home", hasMenu: true, to: "/" },
-  { label: "About Us", hasMenu: false, to: "/" },
+  { label: "About Us", hasMenu: false, to: "/about-us" },
   { label: "Services", hasMenu: true },
   { label: "Therapists", hasMenu: true, to: "/" },
   { label: "Pages", hasMenu: true, to: "/" },
@@ -219,10 +219,28 @@ export function Footer() {
             </button>
           </form>
         </div>
-        <FooterCol
-          title="Pages"
-          items={["About Us", "Our Services", "Blog", "Contacts", "Shop", "Image Credits"]}
-        />
+        <div>
+          <h4 className="text-white text-2xl">Pages</h4>
+          <ul className="mt-6 space-y-3">
+            {[
+              { label: "About Us", to: "/about-us" as const },
+              { label: "Our Services", to: "/" as const },
+              { label: "Blog", to: "/" as const },
+              { label: "Contacts", to: "/" as const },
+              { label: "Shop", to: "/" as const },
+              { label: "Image Credits", to: "/" as const },
+            ].map((i) => (
+              <li key={i.label}>
+                <Link
+                  to={i.to}
+                  className="text-white/70 hover:text-primary transition-colors text-[15px] inline-flex items-center gap-1"
+                >
+                  {i.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
         <FooterCol
           title="Services"
           items={[
