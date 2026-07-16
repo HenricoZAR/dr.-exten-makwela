@@ -23,13 +23,12 @@ export const SERVICES_DROPDOWN: { label: string; to: string }[] = [
   { label: "Childhood Abuse", to: "/" },
 ];
 
-const NAV: { label: string; hasMenu: boolean; to?: string }[] = [
+const NAV: { label: string; hasMenu: boolean; to?: string; href?: string }[] = [
   { label: "Home", hasMenu: true, to: "/" },
   { label: "About Us", hasMenu: false, to: "/about-us" },
   { label: "Services", hasMenu: true },
-  { label: "Therapists", hasMenu: true, to: "/" },
-  { label: "Pages", hasMenu: true, to: "/" },
-  { label: "Blog", hasMenu: false, to: "/" },
+  { label: "Contact", hasMenu: false, to: "/contact" },
+  { label: "Blog", hasMenu: false, href: "/#mindfulness-blog" },
 ];
 
 export function Logo({ dark = false }: { dark?: boolean }) {
