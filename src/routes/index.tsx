@@ -960,6 +960,28 @@ function FooterCol({ title, items }: { title: string; items: string[] }) {
   );
 }
 
+function ScrollToTop() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Scroll to top"
+      className={`fixed bottom-6 right-6 z-50 grid h-12 w-12 place-items-center rounded-full bg-white border-2 border-primary shadow-lg transition-all duration-300 hover:bg-primary ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 pointer-events-none translate-y-4"
+      }`}
+      style={{ borderColor: "#fcda98" }}
+    >
+      <ArrowUp className="h-5 w-5" style={{ color: "#190d39" }} />
+    </button>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen bg-background">
@@ -980,6 +1002,7 @@ function Index() {
         <ContactForm />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
