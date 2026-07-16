@@ -348,8 +348,8 @@ function AboutUsPage() {
                 >
                   <h3 className="text-[1.5rem]">{c.label}</h3>
                   <div className="my-8 flex-1 grid place-items-center">
-                    <div className="h-28 w-28 rounded-full bg-background/70 grid place-items-center">
-                      <User className="h-14 w-14 text-secondary/60" />
+                    <div className="h-28 w-28 rounded-full bg-background/70 grid place-items-center p-3">
+                      <img src={c.icon} alt={c.label} className="h-full w-full object-contain" />
                     </div>
                   </div>
                   <Link
