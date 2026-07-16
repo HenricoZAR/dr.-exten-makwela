@@ -112,14 +112,25 @@ export function Header() {
               );
             }
             return (
-              <Link
-                key={n.label}
-                to={n.to || "/"}
-                className="flex items-center gap-1 text-sm font-medium text-secondary hover:text-tertiary transition-colors"
-              >
-                {n.label}
-                {n.hasMenu && <ChevronDown className="h-3.5 w-3.5" />}
-              </Link>
+              n.href ? (
+                <a
+                  key={n.label}
+                  href={n.href}
+                  className="flex items-center gap-1 text-sm font-medium text-secondary hover:text-tertiary transition-colors"
+                >
+                  {n.label}
+                  {n.hasMenu && <ChevronDown className="h-3.5 w-3.5" />}
+                </a>
+              ) : (
+                <Link
+                  key={n.label}
+                  to={n.to || "/"}
+                  className="flex items-center gap-1 text-sm font-medium text-secondary hover:text-tertiary transition-colors"
+                >
+                  {n.label}
+                  {n.hasMenu && <ChevronDown className="h-3.5 w-3.5" />}
+                </Link>
+              )
             );
           })}
         </nav>
