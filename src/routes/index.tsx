@@ -464,18 +464,39 @@ function ExpertiseIllustration({ idx }: { idx: number }) {
 }
 
 function VideoBanner() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  const toggle = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      void video.play();
+      setPlaying(true);
+    } else {
+      video.pause();
+      setPlaying(false);
+    }
+  };
+
+  const handleEnded = () => setPlaying(false);
+
   return (
     <section className="soft-bg">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 pb-24">
         <div className="relative overflow-hidden rounded-[2rem] aspect-[16/8]">
-          <img
-            src={sessionImg}
-            alt="Therapy session"
+          <video
+            ref={videoRef}
+            src={video1.url}
+            muted
+            playsInline
+            preload="metadata"
+            onEnded={handleEnded}
             className="absolute inset-0 h-full w-full object-cover"
-            loading="lazy"
           />
           <button
-            aria-label="Play"
+            aria-label={playing ? "Pause" : "Play"}
+            onClick={toggle}
             className="absolute inset-0 grid place-items-center group"
           >
             <span className="grid h-24 w-24 place-items-center rounded-full bg-primary text-secondary shadow-2xl transition-transform group-hover:scale-110">
