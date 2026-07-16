@@ -5,6 +5,7 @@ import { Header, Footer, ScrollToTop, PillButton, SERVICES_DROPDOWN } from "@/co
 import cbtImg from "@/assets/cognitive-behavioural-therapy.jpg.asset.json";
 import traumaImg from "@/assets/trauma-focused-therapy.jpg.asset.json";
 import mindfulnessImg from "@/assets/mindfulness-resilience.jpg.asset.json";
+import anxietyTopImg from "@/assets/anxiety-top.jpg.asset.json";
 
 export const Route = createFileRoute("/anxiety-therapy")({
   head: () => ({
