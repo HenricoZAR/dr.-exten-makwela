@@ -2,6 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronDown, ChevronUp, Calendar, Clock } from "lucide-react";
 import { Header, Footer, ScrollToTop, PillButton, SERVICES_DROPDOWN } from "@/components/site-chrome";
+import cbtImg from "@/assets/cognitive-behavioural-therapy.jpg.asset.json";
+import traumaImg from "@/assets/trauma-focused-therapy.jpg.asset.json";
+import mindfulnessImg from "@/assets/mindfulness-resilience.jpg.asset.json";
 
 export const Route = createFileRoute("/anxiety-therapy")({
   head: () => ({
