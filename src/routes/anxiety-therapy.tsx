@@ -133,7 +133,7 @@ function DatePickerField() {
 
   const months = Array.from({ length: 12 }, (_, i) => i + 1);
   const days = Array.from({ length: 31 }, (_, i) => i + 1);
-  const years = Array.from({ length: 5 }, (_, i) => 2024 + i);
+  const years = [2026];
 
   return (
     <div ref={ref} className="relative">
