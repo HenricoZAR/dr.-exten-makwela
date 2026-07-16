@@ -34,13 +34,9 @@ const heroImg = heroImgAsset.url;
 const drRobertsImg = drRobertsImgAsset.url;
 const sessionImg = sessionImgAsset.url;
 const credentialsImg = credentialsImgAsset.url;
-import anxietySvg from "@/assets/anxiety.svg.asset.json";
-import relationshipsSvg from "@/assets/relationships.svg.asset.json";
-import eatingSvg from "@/assets/eating_disorders.svg.asset.json";
-import depressionSvg from "@/assets/depression.svg.asset.json";
-import traumaSvg from "@/assets/Trauma.svg.asset.json";
-import childhoodSvg from "@/assets/childhood_abuse.svg.asset.json";
-import video1 from "@/assets/exten-makwela-video1.mp4.asset.json";
+import blog1 from "@/assets/blog-1.jpg";
+import blog2 from "@/assets/blog-2.jpg";
+import blog3 from "@/assets/blog-3.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
