@@ -320,10 +320,17 @@ function Expertise() {
             <h3 className="text-[2rem] md:text-[2.75rem]">{item.title}</h3>
             <p className="mt-5 text-text text-base md:text-lg max-w-lg">{item.body}</p>
             <div className="mt-8">
-              <PillButton variant="primary" as="a" href="#">
-                Read More
-              </PillButton>
+              {item.key === "anxiety" ? (
+                <PillButton variant="primary" as={Link} to="/anxiety-therapy">
+                  Read More
+                </PillButton>
+              ) : (
+                <PillButton variant="primary" as="a" href="#">
+                  Read More
+                </PillButton>
+              )}
             </div>
+
           </div>
         </div>
       </div>
