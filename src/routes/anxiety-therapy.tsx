@@ -307,7 +307,7 @@ function AnxietyTherapy() {
       <Header />
       <main className="soft-bg">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-14 md:py-20 grid lg:grid-cols-[320px_1fr] gap-10 lg:gap-16 items-start">
-          <div className="lg:sticky lg:top-28 self-start space-y-8">
+          <div className="lg:sticky lg:top-24 self-start space-y-8 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-2">
             <Sidebar />
             <BookingCard />
           </div>
