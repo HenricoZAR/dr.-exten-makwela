@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Menu,
   X,
   Search,
   ArrowRight,
+  ArrowUp,
   ArrowUpRight,
   Play,
   ShieldCheck,
@@ -15,6 +16,8 @@ import {
   Twitter,
   ChevronDown,
 } from "lucide-react";
+import logoColour from "@/assets/exten-makwela-logo-colour.svg.asset.json";
+import logoWhite from "@/assets/exten-makwela-logo-white.svg.asset.json";
 import heroImg from "@/assets/hero-therapist.jpg";
 import drRobertsImg from "@/assets/dr-roberts.jpg";
 import sessionImg from "@/assets/therapy-session.jpg";
@@ -150,27 +153,13 @@ const CREDENTIALS = [
 ];
 
 function Logo({ dark = false }: { dark?: boolean }) {
-  const color = dark ? "#ffffff" : "#190d39";
   return (
-    <a href="#top" className="flex items-center gap-2">
-      <svg width="42" height="34" viewBox="0 0 42 34" fill="none" aria-hidden>
-        <path
-          d="M2 6 C 8 2, 18 4, 21 17 C 24 4, 34 2, 40 6 C 40 22, 30 32, 21 32 C 12 32, 2 22, 2 6 Z"
-          fill="#fcda98"
-          opacity="0.9"
-        />
-        <path
-          d="M21 17 C 18 4, 8 2, 2 6 C 2 22, 12 32, 21 32 Z"
-          fill="#c7e4fe"
-          opacity="0.9"
-        />
-      </svg>
-      <span
-        className="text-2xl leading-none"
-        style={{ fontFamily: "var(--font-serif)", color }}
-      >
-        Mental<span className="italic-serif ml-1">Care</span>
-      </span>
+    <a href="#top" className="flex items-center">
+      <img
+        src={dark ? logoWhite.url : logoColour.url}
+        alt="Dr. Exten Makwela"
+        className="h-10 w-auto"
+      />
     </a>
   );
 }
@@ -325,14 +314,14 @@ function MeetDoctor() {
           <div className="overflow-hidden rounded-[2rem] aspect-[4/5] bg-alternate">
             <img
               src={drRobertsImg}
-              alt="Dr. Roberts"
+              alt="Dr. Makwela"
               className="h-full w-full object-cover"
               loading="lazy"
             />
           </div>
         </div>
         <div>
-          <p className="eyebrow">Meet Dr. Roberts</p>
+          <p className="eyebrow">Meet Dr. Makwela</p>
           <h2 className="mt-5 text-[2rem] md:text-[3rem]">
             Psychologist, Cognitive Behavioural Therapist and High-Performance
             Coach
@@ -931,7 +920,7 @@ function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-wrap items-center justify-between gap-4">
           <p className="text-white/60 text-sm">
-            This is a sample website — Mental Care © 2026 — All Rights Reserved
+            © {new Date().getFullYear()} Dr. Exten Makwela. All Rights Reserved.
           </p>
           <div className="flex items-center gap-3">
             {[Facebook, Instagram, Twitter].map((Icon, i) => (
@@ -971,6 +960,28 @@ function FooterCol({ title, items }: { title: string; items: string[] }) {
   );
 }
 
+function ScrollToTop() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Scroll to top"
+      className={`fixed bottom-6 right-6 z-50 grid h-12 w-12 place-items-center rounded-full bg-white border-2 border-primary shadow-lg transition-all duration-300 hover:bg-primary ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 pointer-events-none translate-y-4"
+      }`}
+      style={{ borderColor: "#fcda98" }}
+    >
+      <ArrowUp className="h-5 w-5" style={{ color: "#190d39" }} />
+    </button>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen bg-background">
@@ -991,6 +1002,7 @@ function Index() {
         <ContactForm />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
