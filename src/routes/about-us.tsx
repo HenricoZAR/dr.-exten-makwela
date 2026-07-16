@@ -212,10 +212,10 @@ const TEAM = [
 ];
 
 const CONDITIONS = [
-  { label: "Anxiety", to: "/anxiety-therapy" as const },
-  { label: "Relationships", to: "/" as const },
-  { label: "Eating Disorders", to: "/" as const },
-  { label: "Depression", to: "/" as const },
+  { label: "Anxiety", to: "/anxiety-therapy" as const, icon: anxietySvg.url },
+  { label: "Relationships", to: "/" as const, icon: relationshipsSvg.url },
+  { label: "Eating Disorders", to: "/" as const, icon: eatingSvg.url },
+  { label: "Depression", to: "/" as const, icon: depressionSvg.url },
 ];
 
 const TESTIMONIALS = [
