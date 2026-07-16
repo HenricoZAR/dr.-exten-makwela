@@ -301,7 +301,7 @@ function FaqItem({
   );
 }
 
-function AnxietyTherapy() {
+export function AnxietyTherapy() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
