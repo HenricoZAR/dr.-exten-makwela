@@ -26,6 +26,12 @@ import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
 import blog3 from "@/assets/blog-3.jpg";
 import credentialsImg from "@/assets/credentials.jpg";
+import anxietySvg from "@/assets/anxiety.svg.asset.json";
+import relationshipsSvg from "@/assets/relationships.svg.asset.json";
+import eatingSvg from "@/assets/eating_disorders.svg.asset.json";
+import depressionSvg from "@/assets/depression.svg.asset.json";
+import traumaSvg from "@/assets/Trauma.svg.asset.json";
+import childhoodSvg from "@/assets/childhood_abuse.svg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -437,69 +443,23 @@ function Expertise() {
 }
 
 function ExpertiseIllustration({ idx }: { idx: number }) {
-  const stroke = "#190d39";
-  const fill = "#190d39";
-  const common = { fill: "none", stroke, strokeWidth: 1.8, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
-  const illustrations = [
-    // Anxiety - person with headscarf
-    <svg viewBox="0 0 300 300" {...common}>
-      <circle cx="150" cy="90" r="35" />
-      <path d="M130 60 q10 -20 30 -10 q10 -8 20 5 q-5 8 -10 10" fill={fill} />
-      <path d="M180 80 l15 -8 M195 72 l-3 -8 M200 78 l6 -3" />
-      <path d="M110 130 q0 40 15 65 q10 15 30 15 q-10 -30 -5 -80" fill={fill} opacity="0.9" />
-      <circle cx="120" cy="140" r="3" fill={fill} />
-      <circle cx="140" cy="160" r="3" fill={fill} />
-      <circle cx="115" cy="170" r="3" fill={fill} />
-      <circle cx="135" cy="185" r="3" fill={fill} />
-    </svg>,
-    // Relationships - circle of people
-    <svg viewBox="0 0 300 300" {...common}>
-      <circle cx="150" cy="150" r="90" />
-      <circle cx="150" cy="65" r="15" fill={fill} />
-      <circle cx="235" cy="150" r="15" fill={fill} />
-      <circle cx="150" cy="235" r="15" fill={fill} />
-      <circle cx="65" cy="150" r="15" fill={fill} />
-      <path d="M140 80 q-5 15 5 25" />
-      <path d="M220 145 q-15 -5 -25 5" />
-      <path d="M160 220 q5 -15 -5 -25" />
-      <path d="M80 155 q15 5 25 -5" />
-    </svg>,
-    // Eating disorders - burger flying
-    <svg viewBox="0 0 300 300" {...common}>
-      <ellipse cx="150" cy="120" rx="70" ry="15" fill={fill} />
-      <path d="M80 120 q0 -40 70 -40 q70 0 70 40" fill={fill} />
-      <rect x="90" y="135" width="120" height="12" rx="4" />
-      <ellipse cx="150" cy="160" rx="65" ry="10" fill={fill} />
-      <circle cx="100" cy="200" r="12" />
-      <circle cx="200" cy="200" r="12" />
-      <path d="M60 190 l-30 20 M240 190 l30 20 M220 175 l30 15" />
-    </svg>,
-    // Depression - meditating figure
-    <svg viewBox="0 0 300 300" {...common}>
-      <circle cx="150" cy="90" r="22" fill={fill} />
-      <path d="M110 130 q0 30 40 30 q40 0 40 -30 q0 20 -40 20 q-40 0 -40 -20 Z" fill={fill} />
-      <path d="M100 180 q50 -20 100 0 q10 30 -50 40 q-60 -10 -50 -40 Z" fill={fill} />
-      <ellipse cx="150" cy="240" rx="80" ry="15" />
-      <path d="M80 240 q0 10 10 15 M220 240 q0 10 -10 15" />
-    </svg>,
-    // Trauma - person arms up
-    <svg viewBox="0 0 300 300" {...common}>
-      <circle cx="150" cy="80" r="18" fill={fill} />
-      <path d="M150 100 v70 M150 130 l-40 -30 M150 130 l40 -30" strokeWidth="8" />
-      <path d="M150 170 l-25 60 M150 170 l25 60" strokeWidth="8" />
-      <path d="M90 60 l-15 -15 M100 45 l-5 -20 M210 60 l15 -15 M200 45 l5 -20 M150 40 v-20" />
-    </svg>,
-    // Childhood - two figures jumping
-    <svg viewBox="0 0 300 300" {...common}>
-      <circle cx="110" cy="70" r="15" fill={fill} />
-      <circle cx="190" cy="70" r="15" fill={fill} />
-      <path d="M110 85 v50 l-20 40 M110 85 l25 25 l-5 30" strokeWidth="6" />
-      <path d="M190 85 v50 l20 40 M190 85 l-25 25 l5 30" strokeWidth="6" />
-      <ellipse cx="150" cy="240" rx="90" ry="20" fill={fill} />
-      <ellipse cx="150" cy="240" rx="90" ry="20" fill="#fafaf8" stroke={stroke} />
-    </svg>,
+  const images = [
+    { src: anxietySvg.url, alt: "Anxiety" },
+    { src: relationshipsSvg.url, alt: "Relationships" },
+    { src: eatingSvg.url, alt: "Eating Disorders" },
+    { src: depressionSvg.url, alt: "Depression" },
+    { src: traumaSvg.url, alt: "Trauma" },
+    { src: childhoodSvg.url, alt: "Childhood Abuse" },
   ];
-  return illustrations[idx];
+  const img = images[idx];
+  return (
+    <img
+      src={img.src}
+      alt={img.alt}
+      className="h-full w-full object-contain"
+      loading="lazy"
+    />
+  );
 }
 
 function VideoBanner() {
