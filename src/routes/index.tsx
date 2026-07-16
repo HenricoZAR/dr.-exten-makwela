@@ -21,6 +21,10 @@ import logoWhite from "@/assets/exten-makwela-logo-white.svg.asset.json";
 import heroImgAsset from "@/assets/exten-web-header.png.asset.json";
 import drRobertsImgAsset from "@/assets/meet-dr-makwela.png.asset.json";
 import sessionImgAsset from "@/assets/professional-credentials-right.jpg.asset.json";
+import toolFindDirection from "@/assets/find_direction.svg.asset.json";
+import toolSelfBelief from "@/assets/boost_self_belief.svg.asset.json";
+import toolMentalHealth from "@/assets/maintain_mental_health.svg.asset.json";
+import toolResilience from "@/assets/build_resilience.svg.asset.json";
 import bookImg from "@/assets/book.jpg";
 import anxietySvg from "@/assets/anxiety.svg.asset.json";
 import relationshipsSvg from "@/assets/relationships.svg.asset.json";
@@ -353,31 +357,10 @@ function MeetDoctor() {
 
 function Tools() {
   const icons = [
-    // life saver / laptop
-    <svg viewBox="0 0 100 100" fill="none" stroke="#190d39" strokeWidth="2" strokeLinecap="round">
-      <circle cx="50" cy="50" r="22" />
-      <circle cx="50" cy="50" r="10" />
-      <path d="M35 35 l-8 -8 M65 35 l8 -8 M35 65 l-8 8 M65 65 l8 8" />
-    </svg>,
-    // meditation
-    <svg viewBox="0 0 100 100" fill="none" stroke="#190d39" strokeWidth="2" strokeLinecap="round">
-      <circle cx="50" cy="30" r="8" />
-      <path d="M35 45 h30 v15 c0 8 -7 15 -15 15 s-15 -7 -15 -15 z" />
-      <path d="M25 55 l10 5 M75 55 l-10 5" />
-      <path d="M30 18 l3 5 M70 18 l-3 5 M50 12 v6" />
-    </svg>,
-    // balloon
-    <svg viewBox="0 0 100 100" fill="none" stroke="#190d39" strokeWidth="2" strokeLinecap="round">
-      <ellipse cx="50" cy="35" rx="18" ry="22" />
-      <path d="M42 55 l4 8 h8 l4 -8 M50 63 v20" />
-      <path d="M78 45 c3 -2 6 0 6 3 M84 55 c3 0 5 3 3 5" />
-    </svg>,
-    // handshake
-    <svg viewBox="0 0 100 100" fill="none" stroke="#190d39" strokeWidth="2" strokeLinecap="round">
-      <path d="M20 55 l15 -12 l10 8 l10 -8 l15 12" />
-      <path d="M25 60 l10 8 M75 60 l-10 8" />
-      <path d="M40 40 l5 -5 M60 40 l-5 -5 M30 30 l4 4 M70 30 l-4 4" />
-    </svg>,
+    toolFindDirection.url,
+    toolSelfBelief.url,
+    toolMentalHealth.url,
+    toolResilience.url,
   ];
   return (
     <section className="soft-bg">
@@ -389,7 +372,9 @@ function Tools() {
               key={t}
               className="group bg-background rounded-[1.75rem] p-8 shadow-[0_10px_40px_-20px_rgba(25,13,57,0.15)] hover:-translate-y-1 hover:shadow-[0_25px_60px_-20px_rgba(25,13,57,0.25)] transition-all duration-300"
             >
-              <div className="h-28 w-28 mx-auto">{icons[i]}</div>
+              <div className="h-28 w-28 mx-auto flex items-center justify-center">
+                <img src={icons[i]} alt="" className="h-full w-full object-contain" />
+              </div>
               <p
                 className="mt-6 text-center text-secondary"
                 style={{ fontFamily: "var(--font-serif)", fontSize: "1.35rem", lineHeight: 1.25 }}
