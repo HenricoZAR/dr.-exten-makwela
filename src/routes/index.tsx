@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Menu,
   X,
   Search,
   ArrowRight,
+  ArrowUp,
   ArrowUpRight,
   Play,
   ShieldCheck,
@@ -15,6 +16,8 @@ import {
   Twitter,
   ChevronDown,
 } from "lucide-react";
+import logoColour from "@/assets/exten-makwela-logo-colour.svg.asset.json";
+import logoWhite from "@/assets/exten-makwela-logo-white.svg.asset.json";
 import heroImg from "@/assets/hero-therapist.jpg";
 import drRobertsImg from "@/assets/dr-roberts.jpg";
 import sessionImg from "@/assets/therapy-session.jpg";
