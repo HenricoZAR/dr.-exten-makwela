@@ -153,32 +153,16 @@ const CREDENTIALS = [
 ];
 
 function Logo({ dark = false }: { dark?: boolean }) {
-  const color = dark ? "#ffffff" : "#190d39";
   return (
-    <a href="#top" className="flex items-center gap-2">
-      <svg width="42" height="34" viewBox="0 0 42 34" fill="none" aria-hidden>
-        <path
-          d="M2 6 C 8 2, 18 4, 21 17 C 24 4, 34 2, 40 6 C 40 22, 30 32, 21 32 C 12 32, 2 22, 2 6 Z"
-          fill="#fcda98"
-          opacity="0.9"
-        />
-        <path
-          d="M21 17 C 18 4, 8 2, 2 6 C 2 22, 12 32, 21 32 Z"
-          fill="#c7e4fe"
-          opacity="0.9"
-        />
-      </svg>
-      <span
-        className="text-2xl leading-none"
-        style={{ fontFamily: "var(--font-serif)", color }}
-      >
-        Mental<span className="italic-serif ml-1">Care</span>
-      </span>
+    <a href="#top" className="flex items-center">
+      <img
+        src={dark ? logoWhite.url : logoColour.url}
+        alt="Dr. Exten Makwela"
+        className="h-10 w-auto"
+      />
     </a>
   );
 }
-
-function PillButton({
   children,
   variant = "primary",
   as: As = "button",
