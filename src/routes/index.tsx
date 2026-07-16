@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Menu,
   X,
@@ -32,6 +32,7 @@ import eatingSvg from "@/assets/eating_disorders.svg.asset.json";
 import depressionSvg from "@/assets/depression.svg.asset.json";
 import traumaSvg from "@/assets/Trauma.svg.asset.json";
 import childhoodSvg from "@/assets/childhood_abuse.svg.asset.json";
+import video1 from "@/assets/exten-makwela-video1.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
