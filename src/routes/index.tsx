@@ -314,14 +314,14 @@ function MeetDoctor() {
           <div className="overflow-hidden rounded-[2rem] aspect-[4/5] bg-alternate">
             <img
               src={drRobertsImg}
-              alt="Dr. Roberts"
+              alt="Dr. Makwela"
               className="h-full w-full object-cover"
               loading="lazy"
             />
           </div>
         </div>
         <div>
-          <p className="eyebrow">Meet Dr. Roberts</p>
+          <p className="eyebrow">Meet Dr. Makwela</p>
           <h2 className="mt-5 text-[2rem] md:text-[3rem]">
             Psychologist, Cognitive Behavioural Therapist and High-Performance
             Coach
