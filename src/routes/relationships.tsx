@@ -112,6 +112,135 @@ function Sidebar() {
   );
 }
 
+function DatePickerField() {
+  const [open, setOpen] = useState(false);
+  const [month, setMonth] = useState<number | null>(null);
+  const [day, setDay] = useState<number | null>(null);
+  const [year, setYear] = useState<number | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onDoc(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener("mousedown", onDoc);
+    return () => document.removeEventListener("mousedown", onDoc);
+  }, []);
+
+  const label =
+    month && day && year
+      ? `${String(month).padStart(2, "0")} / ${String(day).padStart(2, "0")} / ${year}`
+      : "Select Date";
+
+  const months = Array.from({ length: 12 }, (_, i) => i + 1);
+  const days = Array.from({ length: 31 }, (_, i) => i + 1);
+  const years = [2026];
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="w-full flex items-center justify-between rounded-full border border-border bg-background px-6 py-3.5 text-left text-secondary hover:border-secondary transition-colors"
+      >
+        <span className={label === "Select Date" ? "text-tertiary" : ""}>{label}</span>
+        <Calendar className="h-4 w-4 text-tertiary" />
+      </button>
+      {open && (
+        <div className="absolute z-30 mt-2 w-full rounded-2xl border border-border bg-background shadow-[0_20px_60px_-20px_rgba(25,13,57,0.25)] p-3">
+          <div className="grid grid-cols-3 gap-2 text-center">
+            <p className="eyebrow py-1">Month</p>
+            <p className="eyebrow py-1">Day</p>
+            <p className="eyebrow py-1">Year</p>
+            <PickerCol values={months} selected={month} onSelect={setMonth} />
+            <PickerCol values={days} selected={day} onSelect={setDay} />
+            <PickerCol values={years} selected={year} onSelect={setYear} />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function PickerCol({
+  values,
+  selected,
+  onSelect,
+}: {
+  values: number[];
+  selected: number | null;
+  onSelect: (v: number) => void;
+}) {
+  return (
+    <div className="max-h-48 overflow-y-auto flex flex-col gap-1">
+      {values.map((v) => (
+        <button
+          key={v}
+          type="button"
+          onClick={() => onSelect(v)}
+          className={`rounded-md py-1.5 text-sm transition-colors ${
+            selected === v
+              ? "bg-primary text-secondary font-medium"
+              : "text-secondary hover:bg-alternate"
+          }`}
+        >
+          {String(v).padStart(2, "0")}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function TimePickerField() {
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState<string | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onDoc(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener("mousedown", onDoc);
+    return () => document.removeEventListener("mousedown", onDoc);
+  }, []);
+
+  const options = ["08", "09", "10", "11", "12", "Online"];
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="w-full flex items-center justify-between rounded-full border border-border bg-background px-6 py-3.5 text-left text-secondary hover:border-secondary transition-colors"
+      >
+        <span className={value ? "" : "text-tertiary"}>{value ?? "Select Time"}</span>
+        <Clock className="h-4 w-4 text-tertiary" />
+      </button>
+      {open && (
+        <div className="absolute z-30 mt-2 w-full rounded-2xl border border-border bg-background shadow-[0_20px_60px_-20px_rgba(25,13,57,0.25)] p-2">
+          {options.map((o) => (
+            <button
+              key={o}
+              type="button"
+              onClick={() => {
+                setValue(o);
+                setOpen(false);
+              }}
+              className={`w-full rounded-lg px-4 py-2 text-left text-sm transition-colors ${
+                value === o
+                  ? "bg-primary text-secondary font-medium"
+                  : "text-secondary hover:bg-alternate"
+              }`}
+            >
+              {o}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function BookingCard() {
   return (
     <div className="rounded-[1.75rem] bg-alternate p-6 md:p-8">
@@ -132,6 +261,8 @@ function BookingCard() {
           placeholder="Your Phone"
           className="w-full rounded-full border border-border bg-background px-6 py-3.5 text-secondary placeholder:text-tertiary focus:outline-none focus:border-secondary transition-colors"
         />
+        <DatePickerField />
+        <TimePickerField />
         <button
           type="submit"
           className="w-full mt-2 rounded-full bg-primary text-secondary font-medium py-3.5 hover:bg-secondary hover:text-primary transition-colors"
