@@ -177,42 +177,40 @@ function TimePickerField({ placeholder = "Select" }: { placeholder?: string }) {
 
 /* ---------------- Data ---------------- */
 
-const TEAM = [
-  { name: "Mark Hoffman", role: "Neuropsychology" },
-  { name: "Anne Middleton", role: "Clinical Psychology" },
-  { name: "Whitney Pratt", role: "Child Psychiatry" },
-  { name: "Jane Goodman", role: "Neuropsychology" },
-];
-
 const CONDITIONS = [
   { label: "Anxiety", to: "/anxiety-therapy" as const, icon: anxietySvg.url },
-  { label: "Relationships", to: "/" as const, icon: relationshipsSvg.url },
-  { label: "Eating Disorders", to: "/" as const, icon: eatingSvg.url },
-  { label: "Depression", to: "/" as const, icon: depressionSvg.url },
+  { label: "Relationships", to: "/relationships" as const, icon: relationshipsSvg.url },
+  { label: "Eating Disorders", to: "/eating-disorders" as const, icon: eatingSvg.url },
+  { label: "Depression", to: "/depression" as const, icon: depressionSvg.url },
 ];
 
 const TESTIMONIALS = [
   {
     stars: 5,
-    text: "This is an incredible practice with highly skilled providers who attend appointments on time and successfully balance efficiency with warm, empathetic care. Highly recommend!!",
-    name: "Ella R.",
+    text: "Dr Makwela is an exceptional therapist who creates a safe, welcoming environment. The practice runs professionally with timely appointments and genuine, empathetic care that makes a real difference. Highly recommend.",
+    name: "Lerato M.",
+    photo: leratoImg.url,
   },
   {
     stars: 5,
-    text: "Without good mental health, it can be difficult to manage daily stressors and challenges, which can lead to negative consequences in all areas of life.",
-    name: "John D.",
+    text: "Mental health affects every part of your life. This practice helped me understand my patterns and gave me practical tools to manage daily challenges. I wish I had started sooner.",
+    name: "Thabo K.",
+    photo: thaboImg.url,
   },
   {
     stars: 5,
-    text: "Mental Care has an online platform that is easy to maneuver. Overall my experience has been great being that it is my first time going to therapy/tele therapy. I appreciate how safe and comfortable my therapist has makes me feel.",
-    name: "Debbie S.",
+    text: "The online therapy platform is simple and easy to navigate. As someone new to therapy, I appreciated how comfortable my therapist made me feel. I always leave sessions feeling lighter.",
+    name: "Priya S.",
+    photo: priyaImg.url,
   },
   {
     stars: 5,
-    text: "Extremely professional and responsive providers. You are here to help you improve your quality of life whether that is working with them or continuing therapy and alternative lifestyle changes outside of the practice.",
-    name: "Harvey J.",
+    text: "Professional, responsive and genuinely caring providers. They focus on improving your quality of life, whether through therapy sessions or practical lifestyle changes you can implement outside the practice.",
+    name: "Michael N.",
+    photo: michaelImg.url,
   },
 ];
+
 
 /* ---------------- Page ---------------- */
 
