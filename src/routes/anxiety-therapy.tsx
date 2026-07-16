@@ -28,41 +28,51 @@ export const Route = createFileRoute("/anxiety-therapy")({
 
 const SERVICES = [
   "Trauma",
-  "OCD",
   "Anxiety",
   "Relationships",
   "Eating Disorders",
   "Depression",
-  "ADHD",
   "Childhood Abuse",
 ];
 
-const SPECIALISTS = [
-  { name: "Mark Hoffman", role: "Neuropsychology" },
-  { name: "Anne Middleton", role: "Clinical Psychology" },
-  { name: "Whitney Pratt", role: "Child Psychiatry" },
+const SESSIONS = [
+  {
+    title: "Cognitive Behavioural Therapy",
+    subtitle: "Short-term, goal-oriented",
+    image: cbtImg.url,
+  },
+  {
+    title: "Trauma-Focused Therapy",
+    subtitle: "Addressing underlying trauma",
+    image: traumaImg.url,
+  },
+  {
+    title: "Mindfulness & Resilience",
+    subtitle: "Building present-moment awareness",
+    image: mindfulnessImg.url,
+  },
 ];
 
 const FAQS = [
   {
     q: "What types of anxiety disorders do you treat?",
-    a: "We treat a variety of anxiety disorders, including Generalized Anxiety Disorder (GAD), Panic Disorder, Social Anxiety Disorder, Specific Phobias, and Obsessive-Compulsive Disorder (OCD). We also address anxiety related to Post-Traumatic Stress Disorder (PTSD) and other conditions.",
+    a: "We treat a range of anxiety disorders, including Generalised Anxiety Disorder (GAD), Panic Disorder, Social Anxiety Disorder, Specific Phobias and Obsessive-Compulsive Disorder (OCD). We also address anxiety linked to Post-Traumatic Stress Disorder (PTSD), childhood abuse and other trauma-related conditions.",
   },
   {
     q: "What are common symptoms of anxiety?",
-    a: "Common symptoms include persistent worry, restlessness, difficulty concentrating, muscle tension, sleep disturbances, and physical symptoms such as a racing heart, shortness of breath, or nausea.",
+    a: "Common symptoms include persistent worry, restlessness, difficulty concentrating, irritability, muscle tension, sleep disturbances, rapid heartbeat and shortness of breath. Physical symptoms often accompany the psychological experience of anxiety.",
   },
   {
     q: "What treatments are available for anxiety?",
-    a: "Treatments include Cognitive Behavioural Therapy (CBT), exposure therapy, mindfulness-based approaches, and where appropriate, medication in collaboration with a psychiatrist.",
+    a: "Evidence-based treatments include Cognitive Behavioural Therapy (CBT), exposure therapy, acceptance and commitment therapy and mindfulness-based approaches. Treatment plans are tailored to your specific anxiety type and personal circumstances.",
   },
   {
     q: "How effective are these treatments for anxiety?",
-    a: "Evidence-based treatments like CBT are highly effective for most anxiety disorders, with many people experiencing significant improvement within a few months of consistent therapy.",
+    a: "Research shows that CBT and related therapies are highly effective, with up to 80% of clients experiencing significant improvement. Outcomes depend on consistency, therapeutic relationship and commitment to the process.",
   },
   {
     q: "When should I seek professional help for my anxiety?",
-    a: "If anxiety is interfering with your daily life, relationships, work, or wellbeing, or if you're avoiding situations because of it, it's a good time to reach out for professional support.",
+    a: "You should seek help when anxiety interferes with your daily functioning, relationships, work performance or physical health. Early intervention typically leads to better outcomes and prevents the condition from becoming more entrenched.",
   },
 ];
 
