@@ -372,7 +372,9 @@ function Tools() {
               key={t}
               className="group bg-background rounded-[1.75rem] p-8 shadow-[0_10px_40px_-20px_rgba(25,13,57,0.15)] hover:-translate-y-1 hover:shadow-[0_25px_60px_-20px_rgba(25,13,57,0.25)] transition-all duration-300"
             >
-              <div className="h-28 w-28 mx-auto">{icons[i]}</div>
+              <div className="h-28 w-28 mx-auto flex items-center justify-center">
+                <img src={icons[i]} alt="" className="h-full w-full object-contain" />
+              </div>
               <p
                 className="mt-6 text-center text-secondary"
                 style={{ fontFamily: "var(--font-serif)", fontSize: "1.35rem", lineHeight: 1.25 }}
