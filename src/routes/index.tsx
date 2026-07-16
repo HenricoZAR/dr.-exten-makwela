@@ -920,7 +920,7 @@ function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-wrap items-center justify-between gap-4">
           <p className="text-white/60 text-sm">
-            This is a sample website — Mental Care © 2026 — All Rights Reserved
+            © {new Date().getFullYear()} Dr. Exten Makwela. All Rights Reserved.
           </p>
           <div className="flex items-center gap-3">
             {[Facebook, Instagram, Twitter].map((Icon, i) => (
