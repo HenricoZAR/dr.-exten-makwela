@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as AnxietyTherapyRouteImport } from './routes/anxiety-therapy'
+import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
 
 const AnxietyTherapyRoute = AnxietyTherapyRouteImport.update({
   id: '/anxiety-therapy',
   path: '/anxiety-therapy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutUsRoute = AboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
   '/anxiety-therapy': typeof AnxietyTherapyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
   '/anxiety-therapy': typeof AnxietyTherapyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
   '/anxiety-therapy': typeof AnxietyTherapyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/anxiety-therapy'
+  fullPaths: '/' | '/about-us' | '/anxiety-therapy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/anxiety-therapy'
-  id: '__root__' | '/' | '/anxiety-therapy'
+  to: '/' | '/about-us' | '/anxiety-therapy'
+  id: '__root__' | '/' | '/about-us' | '/anxiety-therapy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutUsRoute: typeof AboutUsRoute
   AnxietyTherapyRoute: typeof AnxietyTherapyRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/anxiety-therapy'
       fullPath: '/anxiety-therapy'
       preLoaderRoute: typeof AnxietyTherapyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-us': {
+      id: '/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutUsRoute: AboutUsRoute,
   AnxietyTherapyRoute: AnxietyTherapyRoute,
 }
 export const routeTree = rootRouteImport
