@@ -230,10 +230,8 @@ export function Footer() {
             "Relationships",
             "Eating Disorders",
             "Depression",
-            "ADHD",
-            "Childhood Abuse",
-            "OCD",
             "Trauma",
+            "Childhood Abuse",
           ]}
         />
         <FooterCol
