@@ -183,7 +183,7 @@ function Hero() {
                 couples.
               </p>
               <div className="mt-8">
-                <PillButton variant="primary" as="a" href="#contact">
+                <PillButton variant="primary" as={Link} to="/about-us">
                   Start Your Journey
                 </PillButton>
               </div>
@@ -222,7 +222,7 @@ function Mission() {
 
 function MeetDoctor() {
   return (
-    <section className="soft-bg">
+    <section id="meet-dr-makwela" className="soft-bg">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20 md:py-28 grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div className="relative">
           <div className="overflow-hidden rounded-[2rem] aspect-[4/5] bg-alternate">
@@ -244,7 +244,7 @@ function MeetDoctor() {
             Salvokop, Pretoria, South Africa, offering face-to-face and online sessions.
           </p>
           <div className="mt-8">
-            <PillButton variant="outline" as="a" href="#">
+            <PillButton variant="outline" as={Link} to="/about-us">
               About Us
             </PillButton>
           </div>
@@ -432,7 +432,7 @@ function Credentials() {
             ))}
           </ul>
           <div className="mt-10">
-            <PillButton variant="outline" as="a" href="#">
+            <PillButton variant="outline" as={Link} to="/about-us">
               Learn More
             </PillButton>
           </div>
@@ -480,7 +480,7 @@ function Pricing() {
               </div>
               <p className="mt-10 text-text text-[15px] flex-1">{p.body}</p>
               <div className="mt-10">
-                <PillButton variant="outline" as="a" href="#contact">
+                <PillButton variant="outline" as={Link} to="/about-us">
                   Book a Session
                 </PillButton>
               </div>
