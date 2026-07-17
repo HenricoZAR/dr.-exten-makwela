@@ -10,6 +10,11 @@ import {
   Facebook,
   Instagram,
   Twitter,
+  MapPin,
+  Phone,
+  Smartphone,
+  Mail,
+  Globe,
 } from "lucide-react";
 import logoColour from "@/assets/exten-makwela-logo-colour.svg.asset.json";
 import logoWhite from "@/assets/exten-makwela-logo-white.svg.asset.json";
