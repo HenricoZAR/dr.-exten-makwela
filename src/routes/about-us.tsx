@@ -299,7 +299,7 @@ function AboutUsPage() {
               ))}
             </div>
             <div className="mt-12 flex justify-center">
-              <PillButton variant="dark" as="a" href="#">
+              <PillButton variant="dark" as={Link} to="/anxiety-therapy">
                 View All Services
               </PillButton>
             </div>
@@ -375,9 +375,12 @@ function AboutUsPage() {
                       <option value="" disabled>
                         Select Service
                       </option>
-                      <option>Service A</option>
-                      <option>Service B</option>
-                      <option>Service C</option>
+                      <option value="anxiety-therapy">Anxiety</option>
+                      <option value="relationships">Relationships</option>
+                      <option value="eating-disorders">Eating Disorders</option>
+                      <option value="depression">Depression</option>
+                      <option value="trauma">Trauma</option>
+                      <option value="childhood-abuse">Childhood Abuse</option>
                     </select>
                     <ChevronDown className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 h-4 w-4 text-tertiary" />
                   </div>
@@ -387,15 +390,11 @@ function AboutUsPage() {
                   <label className="eyebrow block mb-2">Doctor</label>
                   <div className="relative">
                     <select
-                      defaultValue=""
-                      className="w-full appearance-none rounded-full border border-border bg-background px-6 py-3.5 pr-12 text-secondary focus:outline-none focus:border-secondary transition-colors"
+                      disabled
+                      defaultValue="exten-makwela"
+                      className="w-full appearance-none rounded-full border border-border bg-alternate px-6 py-3.5 pr-12 text-tertiary cursor-not-allowed transition-colors"
                     >
-                      <option value="" disabled>
-                        Select Doctor
-                      </option>
-                      <option>Dr. Smith</option>
-                      <option>Dr. Jones</option>
-                      <option>Dr. Lee</option>
+                      <option value="exten-makwela">Dr. Exten Makwela</option>
                     </select>
                     <ChevronDown className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 h-4 w-4 text-tertiary" />
                   </div>

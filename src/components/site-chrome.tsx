@@ -147,7 +147,7 @@ export function Header() {
             <Search className="h-5 w-5" />
           </button>
           <div className="hidden sm:block">
-            <PillButton variant="dark" as="a" href="/#contact">
+            <PillButton variant="dark" as="a" href="/#meet-dr-makwela">
               Get Started
             </PillButton>
           </div>
@@ -190,7 +190,7 @@ export function Header() {
               )
             )}
             <a
-              href="/#contact"
+              href="/#meet-dr-makwela"
               onClick={() => setOpen(false)}
               className="sm:hidden mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-secondary text-white px-6 py-3 text-sm font-medium"
             >
