@@ -10,6 +10,11 @@ import {
   Facebook,
   Instagram,
   Twitter,
+  MapPin,
+  Phone,
+  Smartphone,
+  Mail,
+  Globe,
 } from "lucide-react";
 import logoColour from "@/assets/exten-makwela-logo-colour.svg.asset.json";
 import logoWhite from "@/assets/exten-makwela-logo-white.svg.asset.json";
@@ -280,17 +285,60 @@ export function Footer() {
             ))}
           </ul>
         </div>
-        <FooterCol
-          title="Therapists"
-          items={[
-            "Mark Hoffman",
-            "Anne Middleton",
-            "Whitney Pratt",
-            "Jane Goodman",
-            "Martha Ruiz",
-            "Kate Adams",
-          ]}
-        />
+        <div>
+          <h4 className="text-white text-2xl">Contacts</h4>
+          <ul className="mt-6 space-y-3">
+            <li>
+              <a
+                href="https://maps.google.com/?q=Isibalo+House,+Koch+Street,+Salvokop,+Pretoria,+0002"
+                target="_blank"
+                rel="noreferrer"
+                className="text-white/70 hover:text-primary transition-colors text-[15px] inline-flex items-start gap-2"
+              >
+                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
+                <span>Isibalo House, Koch Street, Salvokop, Pretoria, 0002</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="tel:+27117813495"
+                className="text-white/70 hover:text-primary transition-colors text-[15px] inline-flex items-center gap-2"
+              >
+                <Phone className="h-4 w-4 shrink-0" />
+                <span>(011) 781-3495</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="tel:+27658865991"
+                className="text-white/70 hover:text-primary transition-colors text-[15px] inline-flex items-center gap-2"
+              >
+                <Smartphone className="h-4 w-4 shrink-0" />
+                <span>+2765 886-5991</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:bookings@extenmakwela.co.za"
+                className="text-white/70 hover:text-primary transition-colors text-[15px] inline-flex items-center gap-2"
+              >
+                <Mail className="h-4 w-4 shrink-0" />
+                <span>bookings@extenmakwela.co.za</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.extenmakwela.co.za"
+                target="_blank"
+                rel="noreferrer"
+                className="text-white/70 hover:text-primary transition-colors text-[15px] inline-flex items-center gap-2"
+              >
+                <Globe className="h-4 w-4 shrink-0" />
+                <span>www.extenmakwela.co.za</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-wrap items-center justify-between gap-4">
